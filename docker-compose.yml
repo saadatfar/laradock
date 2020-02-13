@@ -278,6 +278,7 @@ services:
         - backend
 ### Laravel Horizon ############################################
     laravel-horizon:
+      privileged: true
       build:
         context: ./laravel-horizon
         args:
@@ -297,6 +298,7 @@ services:
       volumes:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
         - ./laravel-horizon/supervisord.d:/etc/supervisord.d
+        - /var/run/docker.sock:/var/run/docker.sock
       depends_on:
         - workspace
       extra_hosts:
