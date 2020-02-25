@@ -1,7 +1,5 @@
 version: '3'
 
-env_file: production.env
-
 networks:
   frontend:
     driver: ${NETWORKS_DRIVER}
