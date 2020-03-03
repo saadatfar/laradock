@@ -122,6 +122,7 @@ services:
       networks:
         - frontend
         - backend
+      restart: always
 
 ### PHP-FPM ##############################################
     php-fpm:
@@ -203,6 +204,7 @@ services:
         - workspace
       networks:
         - backend
+      restart: always
 
 ### PHP Worker ############################################
     php-worker:
@@ -238,6 +240,8 @@ services:
         - "dockerhost:${DOCKER_HOST_IP}"
       networks:
         - backend
+      restart: always
+        
 ### Laravel Horizon ############################################
     laravel-horizon:
       privileged: true
@@ -267,6 +271,7 @@ services:
         - "dockerhost:${DOCKER_HOST_IP}"
       networks:
         - backend
+      restart: always
 
 ### NGINX Server #########################################
     nginx:
@@ -292,6 +297,7 @@ services:
       networks:
         - frontend
         - backend
+      restart: always
 
 ### MySQL ################################################
     mysql:
@@ -312,6 +318,7 @@ services:
         - "${MYSQL_PORT}:3306"
       networks:
         - backend
+      restart: always
 
 ### Redis ################################################
     redis:
@@ -336,3 +343,4 @@ services:
       networks:
         - frontend
         - backend
+      restart: always
