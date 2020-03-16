@@ -329,6 +329,7 @@ services:
         - "${REDIS_PORT}:6379"
       networks:
         - backend
+      restart: always
 
 ### Laravel Echo Server #######################################
     laravel-echo-server:
