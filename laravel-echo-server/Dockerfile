@@ -7,10 +7,12 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package.json /usr/src/app/
 
+# If you're in China, or you need to change sources, will be set CHANGE_SOURCE to true in .env.
+
 RUN apk add --update \
-    python \
-    python-dev \
-    py-pip \
+    python3 \
+    python3-dev \
+    py3-pip \
     build-base
 
 RUN npm install
